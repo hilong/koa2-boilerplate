@@ -1,0 +1,496 @@
+	/*
+*  Default Themes Style
+*/
+	
+	html,
+	body,
+	div,
+	form,
+	p,
+	ul,
+	li,
+	span,
+	label,
+	img {
+		margin: 0;
+		padding: 0;
+	}
+	a[href] {
+		text-decoration: none;
+		color: inherit;
+	}
+	html,
+	body {
+		height: 100%;
+		width: 100%;
+	}
+	body {
+		font-family: "Microsoft YaHei", "Droid sans fallback", "Heiti SC", Arial, sans-serif;
+		color: rgba(0, 0, 0, 0.75);
+		-webkit-font-smoothing: antialiased;
+		-webkit-text-size-adjust: none;
+		-webkit-user-select: none;
+		overflow: hidden;
+		height: 100%;
+		min-width: 300px;
+		max-width: 640px;
+		margin: 0 auto;
+	}
+	.mobs-android {
+		font-family: "Droid sans fallback", "Roboto", sans-serif;
+	}
+	.mobs-no-scrollbar::-webkit-scrollbar {
+		height: 0 !important;
+		width: 0 !important;
+	}
+	* {
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+		tap-highlight-color: rgba(0, 0, 0, 0) !important;
+	}
+	.clearfix:after,
+	.clearfix:before,
+	.clearfix::after,
+	.clearfix::before {
+		content: ' ';
+		display: table;
+		clear: both;
+	}
+	.mobs-android .mobs-ios-only,
+	.mobs-ios .mobs-android-only {
+		display: none;
+	}
+	/*******************************************************************
+**  mobs header
+**  header样式
+********************************************************************/
+	
+	.mobs {
+		height: 100%;
+		width: 100%;
+	}
+	.mobs-ios.mobs-ios-8 .mobs-header,
+	.mobs-android .mobs-header {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 44px;
+		width: 100%;
+		background-color: #ff6a49;
+		color: #fff;
+	}
+	.mobs-header .mobs-button.left {
+		padding: 15px 15px 15px 27px;
+		height: 14px;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAoCAYAAADkDTpVAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAxJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RUQxQ0FCN0VGMjJGMTFFMjg0REFDNDBBRUVBRjJBNDkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RUQxQ0FCN0RGMjJGMTFFMjg0REFDNDBBRUVBRjJBNDkiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiBNYWNpbnRvc2giPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0iNTNBQzg4QkE2OTc3M0MxNDg4ODc1M0VDNzc3ODcwMDUiIHN0UmVmOmRvY3VtZW50SUQ9IjUzQUM4OEJBNjk3NzNDMTQ4ODg3NTNFQzc3Nzg3MDA1Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+dT5F6gAAAcNJREFUeNqslz8sA1Ecx+9UKi1ispkwMAgbs5XYTCJhlLB3uxrETsLGUgMbutaqJg0Jg5pqqqVCm1TaPt+X3ONp7n53fb/3kk/Su8v7fq/v3u/Pc4UQjsWRAQNg9/eONLDEtvgbnrpvS3wDdMT/4dkyWAUtETy8PuaaL4EcSIQ8T3HefBHURfg4Bq6p+Dz4JMTPQML0G8yCGiF+BZKmu2gKVAnxG5DW5/QiPg4qhPgdGOmeF1d8DJQJ8UcwGjQ3jric+ESIl/0XcEwM5F++J8TfwCSlQYkPgltC/B3MRK1A2IMUKBDiH34sOCYGcg9fE+INP4odEwMZfeeE+DdY6SV29AsXnBDibbDWa+TrFweCHlsmeUv92IsQz5hm3bj1wLxwx1yiDneJ1Ec+JUxa3I+stukFYdLkbFM90PKESZ0TaIp0RKqocVKFYggUCZMqJ9np6bpEmFQ46VovOM+EyQun4Ogl85UweeCUTMVERNEvcoq+YjqibSlw2hbFXETjdclpvBQL4IswyXFaR735bRAmR5zmV7Hs56ewsc89H+TBOmiHPG/aOkJtBhyhsjbPaJKdbnFJv8Uj7CEYBkmQVTd/BBgAAQDbZCXVLesAAAAASUVORK5CYII=);
+		background-repeat: no-repeat;
+		background-size: 12px 20px;
+		background-position: 8px center;
+		line-height: 14px;
+	}
+	.mobs-header .mobs-button.right {
+		right: 0;
+		padding: 10px 15px 10px 15px;
+		height: 24px;
+		line-height: 24px;
+	}
+	.mobs-header .mobs-button.right.menu {
+		padding: 11px 27px 11px 15px;
+		height: 14px;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAQCAYAAAAbBi9cAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAAzSURBVDiNY/z///9/BioAJmoYQlWDhjFg/P//fwO1DBpc0c/CwMDQSC3DhikYfLFGNYMAzMkQBSWaRcoAAAAASUVORK5CYII=);
+		background-repeat: no-repeat;
+		background-size: 18px 16px;
+		background-position: 8px center;
+		line-height: 14px;
+	}
+	.mobs-header .mobs-button {
+		position: absolute;
+		bottom: 0;
+		padding: 0 16px;
+		height: 100%;
+		line-height: 40px;
+		font-weight: 300;
+		-webkit-transition: opacity 0.25s ease-out;
+	}
+	.mobs-header .mobs-button a {
+		color: #fff;
+		text-decoration: none;
+	}
+	.mobs-header .mobs-title {
+		font-size: 18px;
+		font-weight: 400;
+		margin: 0 auto;
+		height: 100%;
+		width: 100%;
+		line-height: 44px;
+		text-align: center;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.mobs-hero {
+		position: relative;
+	}
+	.mobs-hero .mobs-hero-image {
+		display: block;
+		width: 100%;
+		vertical-align: middle;
+	}
+	.mobs-hero .mobs-hero-content {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		padding: 10px;
+	}
+	/*******************************************************************
+**  mobs tabs
+**  tabs选项卡
+********************************************************************/
+	
+	.mobs-tabs {
+		border-bottom: 1px solid #eee;
+		background-color: #fff;
+		padding: 10px 0 9px;
+	}
+	.mobs-tabs::before,
+	.mobs-tabs::after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+	.mobs-tabs div {
+		display: inline-block;
+		float: left;
+		width: 50%;
+		text-align: center;
+	}
+	.mobs-tabs div:first-child {
+		box-shadow: 1px 0 0 #555;
+	}
+	.mobs-tabs a span {
+		padding: 10px 0 9px;
+		margin-bottom: -1px;
+	}
+	.mobs-tabs a.active span {
+		color: #00aeff;
+		border-bottom: 1px solid #00aeff;
+	}
+	.mobs-tabs-content {
+		background-color: #fff;
+		border: 1px solid #ddd;
+		border-top: 0;
+		padding: 10px;
+	}
+	.mobs-main {
+		position: absolute;
+		top: 44px;
+		left: 0;
+		right: 0;
+		bottom: 44px;
+		background-color: rgba(239, 239, 244, 1);
+		height: auto;
+		overflow: scroll;
+	}
+	.mobs-main::before,
+	.mobs-main::after {
+		content: ' ';
+		display: table;
+		clear: both;
+	}
+	.mobs-main .mobs-content {
+		background-color: transparent;
+	}
+	/*******************************************************************
+**  mobs search
+**  搜索框样式
+********************************************************************/
+	
+	.mobs-search {
+		padding: 10px 0;
+		text-align: center;
+	}
+	.mobs-search input[type="search"] {
+		background-image: url(../images/search.png);
+		background-repeat: no-repeat;
+		background-position: left center;
+		background-color: #fff;
+		width: 80%;
+		border: 0;
+		line-height: 26px;
+		outline: none;
+		padding: 5px 5px 5px 36px;
+		border-radius: 36px;
+	}
+	.mobs-search input[type="search"]:focus {
+		box-shadow: 0 0 4px #ff6a49;
+	}
+	/*******************************************************************
+**  mobs aside
+**  弹出层样式
+********************************************************************/
+	
+	.mobs-aside {
+		display: none;
+		position: absolute;
+		top: 25%;
+		left: 0;
+		height: auto;
+		width: 100%;
+	}
+	.mobs-aside .mobs-content {
+		position: relative;
+		width: 80%;
+		height: auto;
+		min-height: 150px;
+		margin: auto;
+		padding: 10px;
+		background-color: #ff6a49;
+		border: 1px solid #555;
+	}
+	.mobs-aside .mobs-content h1 {
+		border-bottom: 1px solid #ddd;
+		color: #fff;
+		margin: 0;
+		padding: 10px 0;
+	}
+	.mobs-aside .mobs-content p {
+		padding: 10px 0;
+		color: #fff;
+	}
+	.mobs-aside .mobs-content button {
+		position: absolute;
+		right: 0;
+		top: 0;
+		background-color: #eee;
+		color: #ff6a49;
+		font-size: 1.25em;
+		line-height: 1;
+		border: 0;
+	}
+	/*******************************************************************
+**  mobs menu
+**  菜单样式
+********************************************************************/
+	
+	.mobs-menu {
+		display: none;
+		background-color: rgba(133, 133, 133, 0.8);
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: auto;
+	}
+	.mobs-menu .menu-content {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		background-color: rgba(125, 125, 125, 0.6);
+		color: #fff;
+	}
+	.mobs-menu li {
+		padding: 10px 20px;
+		border-top: 1px solid rgba(0, 0, 0, 0.3);
+	}
+	.mobs-menu li a {
+		display: block;
+		color: #fff;
+		text-decoration: none;
+	}
+	/*******************************************************************
+**  mobs footer
+**  按钮的样式
+********************************************************************/
+	
+	.mobs-footer {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 44px;
+		overflow: hidden;
+	}
+	.mobs-footer .mobs-content {
+		position: relative;
+		width: 100%;
+		height: 44px;
+	}
+	.mobs-footer .mobs-content .mobs-nav {
+		background-color: #f5f5f5;
+		background-image: -webkit-linear-gradient(top, #f5f5f5, #f0f0f0);
+		background-image: -moz-linear-gradient(top, #f5f5f5, #f0f0f0);
+		background-image: linear-gradient( top, #f5f5f5, #f0f0f0);
+		color: #fff;
+		box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.15);
+	}
+	.mobs-footer .mobs-content .mobs-nav li {
+		float: left;
+		width: 25%;
+	}
+	.mobs-footer .mobs-content .mobs-nav li a {
+		display: block;
+		text-align: center;
+	}
+	.mobs-footer .mobs-content .mobs-nav li a img {
+		height: 30px;
+	}
+	.mobs-footer .mobs-content .mobs-nav li a span {
+		display: block;
+		margin-top: -6px;
+		padding-bottom: 2px;
+		text-align: center;
+		font-size: 12px;
+		line-height: 14px;
+		color: #444;
+	}
+	/*******************************************************************
+**  mobs modal
+**  弹窗样式
+********************************************************************/
+	
+	.mobs-modal {
+		display: none;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background-color: rgba(0, 0, 0, 0.6);
+	}
+	.mobs-modal .mobs-modal-close {
+		font-size: 24px;
+		color: #fff;
+		text-align: center;
+	}
+	.mobs-modal .mobs-modal-body {
+		height: 90%;
+		background-color: #fff;
+		overflow: scroll;
+	}
+	.mobs-modal .mobs-modal-body .mobs-modal-header {
+		padding: 10px;
+		text-align: center;
+		font-size: 16px;
+		font-weight: 700;
+		border-bottom: 1px solid #ddd;
+	}
+	.mobs-modal .mobs-modal-body .mobs-modal-content {
+		padding: 10px;
+	}
+	.mobs-modal .mobs-modal-body .mobs-modal-footer {
+		border-top: 1px solid #eee;
+		padding: 10px;
+	}
+	.mobs-modal .mobs-modal-body .mobs-modal-footer button {
+		border: 0;
+		outline: none;
+		width: 100%;
+		padding: 10px;
+		background-color: #ff5151;
+		color: #fff;
+	}
+	/*******************************************************************
+**  弹窗表单
+**  
+********************************************************************/
+	
+	.mobs-modal .form {
+		padding: 0;
+	}
+	.mobs-modal .form label {
+		position: relative;
+		display: block;
+		width: 100%;
+		margin-bottom: 5px;
+	}
+	.mobs-modal .form i {
+		position: absolute;
+		top: 2px;
+		left: 0;
+		font-size: 18px;
+		width: 32px;
+		line-height: 32px;
+		text-align: center;
+	}
+	.mobs-modal .form span {
+		position: absolute;
+		top: 2px;
+		right: 0;
+		font-size: 18px;
+		width: 32px;
+		line-height: 32px;
+		text-align: center;
+	}
+	.mobs-modal .form input {
+		width: 100%;
+		box-sizing: border-box;
+		padding-left: 32px;
+		height: 32px;
+		/*border-radius: 5px;*/
+	}
+	/*******************************************************************
+**  mobs button
+**  按钮的样式
+********************************************************************/
+	
+	.mobs-btn {
+		box-sizing: border-box;
+		font-size: 16px;
+		font-weight: 400;
+		line-height:24px;
+		color: #fff;
+		border: 0;
+		padding: 10px 20px;
+		text-decoration: none;
+		cursor: pointer;
+		text-align: center;
+	}
+	.mobs-btn.mobs-inline {
+		display: inline-block;
+		margin: 10px auto;
+	}
+	.mobs-btn.mobs-response {
+		display: block;
+		margin: 10px 0;
+		width: 100%;
+	}
+	.mobs-btn.blue {
+		box-shadow: 0px 1px 0px #00aeff, 0px 2px 0px #00ccff;
+		background-color: #00aeff;
+		background-image: -webkit-linear-gradient(top, #00aeff, #00ccff);
+		background-image: -moz-linear-gradient(top, #00aeff, #00ccff);
+		background-image: -o-linear-gradient(top, #00aeff, #00ccff);
+		background-image: linear-gradient(top, #00aeff, #00ccff);
+	}
+	.mobs-btn.red {
+		box-shadow: 0px 1px 0px #ef163f, 0px 2px 0px #ef083f;
+		background-color: #ef083f;
+		background-image: -webkit-linear-gradient(top, #ef163f, #ef083f);
+		background-image: -moz-linear-gradient(top, #ef163f, #ef083f);
+		background-image: -o-linear-gradient(top, #ef163f, #ef083f);
+		background-image: linear-gradient(top, #ef163f, #ef083f);
+	}
+	.mobs-btn.black {
+		box-shadow: 0px 1px 0px #00aeff, 0px 2px 0px #00ccff;
+		background-color: #00aeff;
+		background-image: -webkit-linear-gradient(top, #00aeff, #00ccff);
+		background-image: -moz-linear-gradient(top, #00aeff, #00ccff);
+		background-image: -o-linear-gradient(top, #00aeff, #00ccff);
+		background-image: linear-gradient(top, #00aeff, #00ccff);
+	}
+	.mobs-btn.orange {
+		box-shadow: 0px 1px 0px #00aeff, 0px 2px 0px #00ccff;
+		background-color: #F45C10;
+		background-image: -webkit-linear-gradient(top, #F45C10, #F45C10);
+		background-image: -moz-linear-gradient(top, #F45C10, #F45C10);
+		background-image: -o-linear-gradient(top, #F45C10, #F45C10);
+		background-image: linear-gradient(top, #F45C10, #00ccff);
+	}
+	/*
+**  Themes
+**  主体的开发
+*************************************************************************/
+	
+	body .default {
+		/* default themes*/
+	}

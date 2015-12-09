@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>悦车险</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<link rel="stylesheet" href="/Mobile/Content/css/mobs.css">
+	<link rel="stylesheet" href="/Mobile/Content/css/mobs-user.css">
+	<link rel="stylesheet" href="/Mobile/Content/css/font-awesome.css">
+	<style>
+		.mobs-main {
+			top: 0;
+			bottom: 0;
+		}
+
+	</style>
+</head>
+
+<body class="mobs-ios mobs-ios-8 default" ng-app="myform">
+	<header class="mobs-header">
+		<div class="mobs-button left"><a href="index.html">返回</a></div>
+		<div class="mobs-title">优惠活动</div>
+	</header>
+	<main class="mobs-main">
+		<a id="skip-main"></a>
+		<section class="mobs-content">
+			<div class="safe safe-activity">
+				<p><img class="img-response" src="/Mobile/Content/images/safe-activity-1.jpg"></p>
+				<h2 class="title">人保 阳光 天平 民安保险任你选</h2>
+				<button class="mobs-btn mobs-response red" id="mobs-modal" type="button" style="width:90%;margin:auto;" ng-click="ToggleModal">立即投保</button>
+				<!--div class="line"><span class="center-title">查看详情</span></div-->
+				<div class="description">
+					<h2 class="text-center">悦保险 - 领先的车险优选平台</h2>
+					<p style="text-indent:2em;">集合人保、太平洋、阳光、天盛天平、民安等多家保险公司实现0佣金、0手续费，所有车险报价比保险公司等传统渠道便宜25%。</p>
+					<p class="text-center"><img class="img-response" src="/Mobile/Content/images/safe-activity-2.jpg" alt=""></p>
+				</div>
+				<div class="call-me">
+					<p class="call-me-btn"><a href="tel:400-007-0897">拨打报价热线</a></p>
+					<p><a href="tel:400-007-0897">400-007-0897</a></p>
+				</div>
+				<div class="text-center">
+					<img class="img-response" src="/Mobile/Content/images/safe-activity-3.jpg" alt="">
+				</div>
+			</div>
+		</section>
+	</main>
+	<aside class="mobs-modal">
+		<div id="mobs-modal-close" class="mobs-modal-close">
+			<i class="fa fa-times"></i>
+		</div>
+		<div class="mobs-modal-body">
+			<div class="mobs-modal-header">请输入您的基本信息</div>
+			<div class="mobs-modal-content">
+				<form name="myForm" class="form">
+					<label>
+						<input name="name" type="text" placeholder="姓名" required>
+						<i class="fa fa-user"></i>
+					</label>
+					<label>
+						<input name="phone" type="text" placeholder="手机号码" required>
+						<i class="fa fa-mobile"></i>
+					</label>
+					<label>
+						<input name="carid" type="text" placeholder="车牌号如：豫A88888" required>
+						<i class="fa fa-credit-card"></i>
+					</label>
+					<p>以下为选填项：</p>
+					<label>
+						<input type="text" placeholder="个人身份证号">
+						<i class="fa fa-credit-card"></i>
+					</label>
+					<label>
+						<input type="text" placeholder="机动车行驶证上的“品牌型号”">
+						<i class="fa fa-car"></i>
+					</label>
+					<label>
+						<input type="text" placeholder="机动车行驶证上的“车辆识别代号”">
+						<i class="fa fa-credit-card"></i>
+					</label>
+					<label>
+						<input type="text" placeholder="机动车行驶证上的“发动机号码”">
+						<i class="fa fa-credit-card"></i>
+					</label>
+					<button class="mobs-btn mobs-response red" type="submit">提交信息</button>
+				</form>
+			</div>
+		</div>
+	</aside>
+	<div class="mobs-messages"></div>
+	<!--footer class="mobs-footer">
+		<div class="mobs-content">
+			<ul class="mobs-nav lists clearfix">
+				<li>
+					<a href="index.html"><img src="/Mobile/Content/images/footer-nav-item-1.svg">
+						<span>主页</span></a>
+				</li>
+				<li>
+					<a href="#"><img src="/Mobile/Content/images/footer-nav-item-2.svg">
+						<span>活动</span></a>
+				</li>
+				<li>
+					<a href="safe.html"><img src="/Mobile/Content/images/footer-nav-item-3.svg">
+						<span>保险</span></a>
+				</li>
+				<li>
+					<a href="UserIndex.html"><img src="/Mobile/Content/images/footer-nav-item-4.svg">
+						<span>用户</span></a>
+				</li>
+			</ul>
+		</div>
+	</footer-->
+
+	<script src="/Mobile/Content/js/jquery-1.11.2.min.js"></script>
+	<script>
+		$('#mobs-modal').on('click', function() {
+			$('.mobs-modal').css('display', 'block');
+		})
+		$('#mobs-modal-close').on('click', function() {
+			$('.mobs-modal').css('display', 'none');
+		})
+
+	</script>
+</body>
+
+</html>

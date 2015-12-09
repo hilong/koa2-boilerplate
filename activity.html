@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>悦买车</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<link rel="stylesheet" href="/Mobile/Content/css/mobs.css">
+	<link rel="stylesheet" href="/Mobile/Content/css/mobs-user.css">
+	<link rel="stylesheet" href="/Mobile/Content/css/font-awesome.css">
+</head>
+
+<body class="mobs-ios mobs-ios-8 default">
+	<header class="mobs-header">
+		<div class="mobs-button left"><a href="index.html">返回</a></div>
+		<div class="mobs-title">优惠活动</div>
+	</header>
+	<main class="mobs-main" style="top:0;">
+		<a id="skip-main"></a>
+		<section class="mobs-content">
+			<div class="activity">
+				<div><img class="img-response" src="/Mobile/Content/images/activity/01.jpg"></div>
+				<div><img class="img-response" src="/Mobile/Content/images/activity/02.jpg"></div>
+				<div><img class="img-response" src="/Mobile/Content/images/activity/03.jpg"></div>
+				<div><img class="img-response" src="/Mobile/Content/images/activity/04.jpg"></div>
+				<div><img class="img-response" src="/Mobile/Content/images/activity/05.jpg"></div>
+				<div><img class="img-response" src="/Mobile/Content/images/activity/06.jpg"></div>
+				<div><img class="img-response" src="/Mobile/Content/images/activity/07.jpg"></div>
+				<div><img class="img-response" src="/Mobile/Content/images/activity/08.jpg"></div>
+			</div>
+		</section>
+	</main>
+	<footer class="mobs-footer">
+		<div class="mobs-content">
+			<div id="mobs-modal" class="mobs-btn orange">立即参与</div>
+		</div>
+	</footer>
+	<aside class="mobs-modal">
+		<div id="mobs-modal-close" class="mobs-modal-close">
+			<i class="fa fa-times"></i>
+		</div>
+		<div class="mobs-modal-body">
+			<div class="mobs-modal-header">请输入您的基本信息</div>
+			<div class="mobs-modal-content">
+				<form name="myForm" class="form">
+					<label>
+						<input name="name" type="text" placeholder="姓名" required>
+						<i class="fa fa-user"></i>
+					</label>
+					<label>
+						<input name="phone" type="text" placeholder="手机号码" required>
+						<i class="fa fa-mobile"></i>
+					</label>
+					<label>
+						<input name="carid" type="text" placeholder="车牌号如：豫A88888" required>
+						<i class="fa fa-credit-card"></i>
+					</label>
+					<p>以下为选填项：</p>
+					<label>
+						<input type="text" placeholder="个人身份证号">
+						<i class="fa fa-credit-card"></i>
+					</label>
+					<label>
+						<input type="text" placeholder="机动车行驶证上的“品牌型号”">
+						<i class="fa fa-car"></i>
+					</label>
+					<label>
+						<input type="text" placeholder="机动车行驶证上的“车辆识别代号”">
+						<i class="fa fa-credit-card"></i>
+					</label>
+					<label>
+						<input type="text" placeholder="机动车行驶证上的“发动机号码”">
+						<i class="fa fa-credit-card"></i>
+					</label>
+					<button class="mobs-btn mobs-response red" type="submit">提交信息</button>
+				</form>
+			</div>
+		</div>
+	</aside>
+	<script src="/Mobile/Content/js/jquery-1.11.2.min.js"></script>
+	<script>
+		$('#mobs-modal').on('click', function() {
+			$('.mobs-modal').css('display', 'block');
+		})
+		$('#mobs-modal-close').on('click', function() {
+			$('.mobs-modal').css('display', 'none');
+		})
+
+	</script>
+</body>
+
+</html>

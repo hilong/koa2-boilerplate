@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>手机验证码获取</title>
+	<style rel="stylesheet" type="text/css">
+
+
+	</style>
+</head>
+
+<body ng-app="SignUp">
+	<div class="swrap">
+		<form name="signup_form" ng-controller="signupController" ng-submit="submitForm()">
+			<fieldset>
+				<legend>用户注册</legend>
+				<div ng-repeat="field in fields" ng-form="signup_form_input">
+					<input type="text" name="dynamic_input" ng-required="{{field.isRequired}}" ng-model="field.name" placeholder="{{field.placeholder}}">
+					<div ng-show="signup_form_input.dynamic_input.$dirty && signup_form_input.dynamic_input.$invalid">
+						<span class="error" ng-show="signup_form_input.dynamic_input.$error.required">The field is required.</span>
+					</div>
+				</div>
+				<button type="submit" ng-disabled="signup_form.$invalid">Submit All</button>
+			</fieldset>
+		</form>
+	</div>
+	<script src="/Mobile/Content/js/angular.min.js"></script>
+	<script>
+		angular.module('SignUp', [])
+			.controller('signupController', function($scope) {
+				$scope.fields = [{
+					placeholder: 'Username',
+					isRequired: true
+				}, {
+					placeholder: 'Password',
+					isRequired: true
+				}, {
+					placeholder: 'Email(optional)',
+					isRequired: false
+				}];
+				$scope.submitForm = function() {
+					alert("It's Works!");
+				}
+			})
+
+	</script>
+</body>
+
+</html>
