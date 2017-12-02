@@ -1,5 +1,5 @@
 {
-  "name": "koaboiler",
+  "name": "koa2boilerplate",
   "version": "1.0.0",
   "description": "koa boilerplate for production ready",
   "main": "server.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/llambda/koaboiler.git"
+    "url": "git+https://github.com/hilong/koa2-boilerplate.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/llambda/koaboiler/issues"
+    "url": "https://github.com/hilong/koa2-boilerplate/issues"
   },
-  "homepage": "https://github.com/llambda/koaboiler#readme",
+  "homepage": "https://github.com/hilong/koa2-boilerplate#readme",
   "dependencies": {
     "koa": "^2.3.0",
     "koa-bodyparser": "^4.2.0",
@@ -33,7 +33,9 @@
     "koa-session": "^5.5.0",
     "koa-static": "^4.0.1",
     "koa-trie-router": "^2.1.6",
+    "lodash": "^4.17.4",
     "mongoose": "^4.12.6",
+    "redux": "^3.7.2",
     "thenify-all": "^1.6.0",
     "validator": "^9.1.1"
   }
