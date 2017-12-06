@@ -6,7 +6,6 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var StudentSchema = new Schema({
-    _id: { type: String },
     name: String, // 姓名
     sex: String, // 性别
     class: String, // 班级

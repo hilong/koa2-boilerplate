@@ -33,15 +33,20 @@ class Guestbook {
         let errorMessage = '';
         try {
             let body = _.defaults(ctx.request.body, supplyment);
-            // let keys =[];
-            // _.forIn(body,function(value,key){
-            //     if(value==''){
-            //         keys.push(key);
-            //     }
-            // });
-            // if(keys.length){
-
-            // }
+            let keys =[];
+            _.forIn(body,function(value,key){
+                if(value==''){
+                    keys.push(key);
+                }
+            });
+            if(keys.length){
+                ctx.response.body = {
+                    errorCode: '000001',
+                    errorType: 'ParamsValidatorError',
+                    errorMessage: keys.toString()+'入参不能为空！'
+                }
+                return false;
+            }
             let guestbook = new GuestbookModel(body);
             let result = await guestbook.save();
 
@@ -57,9 +62,10 @@ class Guestbook {
 
         }
     }
-
+    //GET
     async deleteById(ctx, next){
-
+        let id = ctx.query.id;
+        
     }
 }
 module.exports = new Guestbook();

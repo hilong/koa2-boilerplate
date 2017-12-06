@@ -2,7 +2,8 @@
 
 const Koa = require('koa');
 const app = module.exports = new Koa();
-
+app.keys = ['hello world'];
+app.name = 'koa study';
 app.use( require('koa-response-time')() );
 //app.use( require('koa-favicon')( require.resolve('./client/favicon.ico')) );
 //app.use( require('koa-conditional-get')() );
@@ -10,7 +11,7 @@ app.use( require('koa-response-time')() );
 app.use( require('koa-morgan')('combined') );
 //app.use( require('koa-helmet')() );
 app.use( require('koa-compress')({flush: require('zlib').Z_SYNC_FLUSH}) );
-app.keys = ['hello world'];
+app.use( require('koa-jwt')({secret: 'shared-secret'}).unless({path:[/^\/*/]}));
 app.use( require('koa-session')({maxAge: 24 * 60 * 60 * 1000}, app) );
 app.use( require('koa-bodyparser')({}) );
 class NullOrUndefinedError extends Error {

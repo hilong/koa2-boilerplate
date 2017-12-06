@@ -2,10 +2,10 @@
  * @description 学生主页的留言评论
  * @author hilong.github.io
  */
-var mongoose = require('../config/db');
-var Schema = mongoose.Schema;
+const mongoose = require('../config/db');
+const Schema = mongoose.Schema;
 
-var GuestbookSchema = new Schema({
+const GuestbookSchema = new Schema({
     toStudentId: String, // 所属于学生ID
     fromStudentId: String, // 来自于学生ID
     fromStudentName: String,// 来自于学生name
@@ -14,6 +14,6 @@ var GuestbookSchema = new Schema({
     content: String, // 留言内容
 });
 //{toStudentId:'101',fromStudentId:'102',fromStudentName:'test',subject:'test guestbook',createDate:'',content:'test guestbook'}
-var Guestbook = mongoose.model('Guestbook', GuestbookSchema, 'guestbook');
+const Guestbook = mongoose.model('Guestbook', GuestbookSchema, 'guestbook');
 
 module.exports = Guestbook;
