@@ -4,5 +4,3 @@
 /node_modules/
 /client/assets/scripts/
 .DS_Store
-start-mongod.sh
-stop-mongod.sh
