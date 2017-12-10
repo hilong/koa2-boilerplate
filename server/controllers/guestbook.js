@@ -7,8 +7,8 @@ class Guestbook {
     async findByParams(ctx, next){
         try {
             let params = ctx.query;
-            const guestbook = await GuestbookModel.find(params).exec();
-            ctx.response.body = guestbook;
+            const result = await GuestbookModel.find(params).exec();
+            ctx.response.body = result;
         } catch (err) {
             ctx.response.body = {
                 errorCode: '000000',
@@ -62,10 +62,39 @@ class Guestbook {
 
         }
     }
-    //GET
+    //DELETE
     async deleteById(ctx, next){
-        let id = ctx.query.id;
-        
+        let id = ctx.params.id;
+        try {
+            if(id){
+               let result = await GuestbookModel.findOneAndRemove({_id: id});
+                ctx.response.body = result;
+            }
+        } catch ( err ){
+            ctx.response.body = {
+                errorCode: '000000',
+                errorType: 'ERROR_DATA',
+                errorMessage: err
+            };
+        }
+    }
+    //POST
+    async updateById(ctx, next){
+        let id = ctx.params.id;
+        let date = new Date();
+        let params = ctx.request.body;
+        try {
+            if(id){
+               let result = await GuestbookModel.findOneAndUpdate({_id: id},{$set:params});
+                ctx.response.body = result;
+            }
+        } catch ( err ){
+            ctx.response.body = {
+                errorCode: '000000',
+                errorType: 'ERROR_DATA',
+                errorMessage: err
+            };
+        }
     }
 }
 module.exports = new Guestbook();

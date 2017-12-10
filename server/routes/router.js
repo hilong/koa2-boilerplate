@@ -20,7 +20,9 @@ routes
     .get ('/api/getUser'   , User.getUser)
     .get ('/api/getUsers'  , User.getUsers)
     .get ('/api/guestbook' , Guestbook.findByParams)
-    .post('/api/guestbook/create',Guestbook.create)
+    .post('/api/guestbook',Guestbook.create)
+    .post('/api/guestbook/:id',Guestbook.updateById)
+    .delete('/api/guestbook/:id',Guestbook.deleteById)
     ;
 
 routes.get('/api/error', (ctx, next) => {
