@@ -2,8 +2,9 @@
 
 const Koa = require('koa');
 const app = module.exports = new Koa();
-app.keys = ['hello world'];
-app.name = 'koa study';
+const config = require('./server/config/config');
+app.keys = config.APP_Keys;
+app.name = config.APP_Name;
 
 //app.use( require('koa-response-time')() );
 //app.use( require('koa-favicon')( require.resolve('./client/favicon.ico')) );
@@ -20,7 +21,7 @@ app.use( require('koa-etag')() );
 app.use( require('koa-helmet')() );
 //Compress zlib
 app.use( require('koa-compress')({flush: require('zlib').Z_SYNC_FLUSH}) );
-//app.use( require('koa-jwt')({secret: 'shared-secret',key:'msa'}).unless({path:require('./server/config/unless')}));
+app.use( require('koa-jwt')({ secret: config.JWT_Secret }).unless({ path: config.JWT_Unless }) );
 app.use( require('koa-session')({maxAge: 24 * 60 * 60 * 1000}, app) );
 app.use( require('koa-bodyparser')({}) );
 class NullOrUndefinedError extends Error {
@@ -90,7 +91,7 @@ const routes = require('./server/routes/router');
 app.use(routes.middleware())
 
 //设置静态资源文件夹client为根目录
-app.use(KmMount('/p/', require('koa-static')('client')));
+app.use(KmMount( config.APP_Static_Url, require('koa-static')( config.APP_Static_Path ) ));
 
 //设置服务启动端口
-app.listen(3000);
+app.listen(config.APP_Port);

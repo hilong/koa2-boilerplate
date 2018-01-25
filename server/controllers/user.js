@@ -1,22 +1,25 @@
-//const UserModel =require('../models/user');
+const UserModel =require('../models/user');
 
 class User {
     constructor(){}
+    //POST
     async loginAction(ctx, next){
         let formdata = ctx.request.body;
         let errorMsg = '';
         const userObj = {
-           username:'',
-           passsword:''
+           username: formdata.username,
+           passsword: formdata.passsword
         }
+        
+        // We are sending the profile inside the token
+        var token = jwt.sign(profile, secret, { expiresInMinutes: 60*5 });
+
         return ctx.response.body= {
-            status:'ok',
-            username: formdata.username,
-            password: formdata.password
-            
+            status: 'ok',
+            token: token
         }
     }
-    //Type:GET
+    //GET
     async logoutAction(ctx, next){
         let query = ctx.request.query;
         
